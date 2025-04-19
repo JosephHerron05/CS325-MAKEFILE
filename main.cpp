@@ -5,48 +5,49 @@
 
 using namespace std;
 
+// Function to run a series of tests on an Employee object (or derived class object)
 void runEmployeeTests(Employee & e);
 
 int main() {
-  // Test default Employee constructor
+  // --- Testing default Employee constructor ---
   Employee defaultE;
   cout << "Testing Employee default constructor:" << endl;
   runEmployeeTests(defaultE);
 
   cout << endl << endl;
 
-  // Test parameterized Employee constructor
-  // ID: 1248, years: 2, hourlyRate: 15.23, hoursWorked: 3
+  // --- Testing parameterized Employee constructor ---
+  // ID: 1248, Years: 2, Hourly Rate: 15.23, Hours Worked: 3
   Employee parameterizedE(1248, 2, 15.23, 3);
   cout << "Testing Employee parameterized constructor:" << endl;
   runEmployeeTests(parameterizedE);
 
   cout << endl << endl;
   
-  // Test default Supervisor constructor
+  // --- Testing default Supervisor constructor ---
   Supervisor defaultS;
   cout << "Testing Supervisor default constructor:" << endl;
   runEmployeeTests(defaultS);
 
   cout << endl << endl;
 
-  // Test parameterized Supervisor constructor
-  // ID: 422, years: 9, hourlyRate: 55.44, hoursWorked: 20, numSupervised 52
-  cout << "Testing Supervisor parameterized constructor:" << endl;
+  // --- Testing parameterized Supervisor constructor ---
+  // ID: 422, Years: 9, Hourly Rate: 55.44, Hours Worked: 20, Supervises: 52
   Supervisor parameterizedS(422, 9, 55.44, 20, 52);
+  cout << "Testing Supervisor parameterized constructor:" << endl;
   runEmployeeTests(parameterizedS);
 
   cout << endl << endl;
 
-  // Test default Officer constructor
+  // --- Testing default Officer constructor ---
   Officer defaultO;
   cout << "Testing Officer default constructor:" << endl;
   runEmployeeTests(defaultO);
 
   cout << endl << endl;
 
-  // Test parameterized Officer constructor
-  // ID: 2, years = 94, hourlyRate: 10.859, hoursWorked: 2, evilness 9000.1
+  // --- Testing parameterized Officer constructor ---
+  // ID: 2, Years: 94, Hourly Rate: 10.859, Hours Worked: 2, Evilness: 9000.1
   Officer parameterizedO(2, 94, 10.859, 2, 9000.1);
   cout << "Testing Officer parameterized constructor:" << endl;
   runEmployeeTests(parameterizedO);
@@ -54,14 +55,20 @@ int main() {
   return 0;
 }
 
+// Function to test core functionality of an Employee (or derived) object
 void runEmployeeTests(Employee &e) {
-  
+  // Polymorphic call to the print() method
   cout << "Initial print():" << endl;
   e.print();
+
+  // Polymorphic call to calculatePay()
   cout << "Calculated Pay: " << e.calculatePay() << endl;
+
+  // Test the anniversary behavior
   cout << "Anniversary Test: ";
   e.anniversary();
+
+  // Print again to see updated values after anniversary
   cout << "Final print():" << endl;
   e.print();
-
 }

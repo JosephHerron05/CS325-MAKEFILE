@@ -7,7 +7,8 @@ Officer::Officer() {
   evilness = 500;
 }
 
-Officer::Officer(int ID, int years, double hourlyRate, float hoursWorked, double evilness) : Employee(ID, years, hourlyRate, hoursWorked) {
+Officer::Officer(int ID, int years, double hourlyRate, float hoursWorked, double evilness)
+  : Employee(ID, years, hourlyRate, hoursWorked) {
   this->evilness = evilness;
 }
 

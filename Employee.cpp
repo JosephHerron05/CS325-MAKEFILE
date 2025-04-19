@@ -15,19 +15,19 @@ Employee::Employee(int ID, int years, double hourlyRate, float hoursWorked) {
 }
 
 void Employee::print() {
-  cout << "Printing information for employee " << ID << ":\n Years Employed: " << years
-       << "\n Hourly Rate: " << hourlyRate << "\n Hours Worked: " << hoursWorked
-       << endl;
+  cout << "Printing information for employee " << ID << ":\n"
+       << " Years Employed: " << years << "\n"
+       << " Hourly Rate: " << hourlyRate << "\n"
+       << " Hours Worked: " << hoursWorked << endl;
 }
 
 void Employee::anniversary() {
   years++;
-  hourlyRate = hourlyRate + hourlyRate * .002;
-  cout << "Congratulations to employee " << ID << " on " << years << " year(s) at company!"
-       << endl;
+  hourlyRate = hourlyRate + hourlyRate * 0.002;
+  cout << "Congratulations to employee " << ID << " on " << years 
+       << " year(s) at company!" << endl;
 }
 
 double Employee::calculatePay() {
   return hourlyRate * hoursWorked;
 }
-
